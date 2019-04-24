@@ -1,0 +1,39 @@
+{
+  "name": "Wod-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start:watch": "nodemon --watch dist dist/server.js | bunyan -o short",
+    "dev": "npm-run-all --parallel start:watch build:watch",
+    "build": "tsc",
+    "build:watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LukeBrandon/Wod-api.git"
+  },
+  "keywords": [],
+  "author": "Luke Brandon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LukeBrandon/Wod-api/issues"
+  },
+  "homepage": "https://github.com/LukeBrandon/Wod-api#readme",
+  "dependencies": {
+    "bunyan": "^1.8.12",
+    "cors": "^2.8.5",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "@types/bunyan": "^1.8.6",
+    "@types/cors": "^2.8.4",
+    "@types/express": "^4.16.1",
+    "@types/node": "^11.13.6",
+    "nodemon": "^1.18.11",
+    "npm-run-all": "^4.1.5",
+    "npx": "^10.2.0",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.4"
+  }
+}
