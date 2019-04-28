@@ -3,17 +3,17 @@ import { Request, Response } from "express";
 
 import { createLogger } from "bunyan";
 import { app } from "../index";
-import { testData } from "./data";
+import { testData, logins } from "./data";
 
 // import { IWod } from "../users/model";
-import { IScore } from "./model";
+import { IScore, IUserLogin } from "./model";
 
 const log = createLogger({
-    name: "Wod",
+    name: "Users",
 });
 
 app.get("/getResults/:year/:month/:day", (req: Request, res: Response) => {
-    log.info(`Results for WOD on Day: ${req.params.day}, Month: ${req.params.month}, Year: ${req.params.year}`);
+    log.info(`Getting results for WOD on Day: ${req.params.day}, Month: ${req.params.month}, Year: ${req.params.year}`);
 
     // date to number
     let date = req.params.month + req.params.day + req.params.year;
@@ -32,4 +32,18 @@ app.get("/getResults/:year/:month/:day", (req: Request, res: Response) => {
     }
 
     res.send(atDate);
+});
+
+app.post("/users/login", (req: Request, res: Response) => {
+    log.info(`Incoming login credentials are ${req.body}`);
+    log.info(`Attempted login with Email: ${req.body.email}`);
+
+    // get data from db and see if correct
+    for (const login of logins) {
+        if (login.email === req.body.email && login.password === req.body.password) {
+            res.send(login);
+        }
+    }
+
+    res.send(null);
 });

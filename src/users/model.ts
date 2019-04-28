@@ -5,3 +5,9 @@ export interface IScore {
     userName: string;
     score: string;
 }
+
+export interface IUserLogin {
+    email: string;
+    password: string;
+    status: string;
+}
