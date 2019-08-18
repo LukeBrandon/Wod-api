@@ -29,4 +29,3 @@ app.get("/getWod/:year/:month/:day", (req: Request, res: Response) => {
     res.send(atDate);
 
 });
-

@@ -11,3 +11,9 @@ export interface IUserLogin {
     password: string;
     status: string;
 }
+
+export interface IUser {
+    name: string;
+    signInsThisWeek: number;
+    age?: number;
+}

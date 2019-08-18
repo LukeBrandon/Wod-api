@@ -3,10 +3,10 @@ import { Request, Response } from "express";
 
 import { createLogger } from "bunyan";
 import { app } from "../index";
-import { testData, logins } from "./data";
+import { testData, logins, users } from "./data";
 
 // import { IWod } from "../users/model";
-import { IScore, IUserLogin } from "./model";
+import { IScore, IUserLogin, IUser } from "./model";
 
 const log = createLogger({
     name: "Users",
@@ -34,6 +34,12 @@ app.get("/getResults/:year/:month/:day", (req: Request, res: Response) => {
     res.send(atDate);
 });
 
+app.get("/getAllUsers", (req: Request, res: Response) => {
+    log.info(`Getting all users`);
+
+    res.send(users);
+});
+
 app.post("/users/login", (req: Request, res: Response) => {
     log.info(`Incoming login credentials are ${req.body}`);
     log.info(`Attempted login with Email: ${req.body.email}`);
@@ -47,3 +53,4 @@ app.post("/users/login", (req: Request, res: Response) => {
 
     res.send(null);
 });
+

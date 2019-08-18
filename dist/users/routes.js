@@ -23,6 +23,10 @@ index_1.app.get("/getResults/:year/:month/:day", (req, res) => {
     }
     res.send(atDate);
 });
+index_1.app.get("/getAllUsers", (req, res) => {
+    log.info(`Getting all users`);
+    res.send(data_1.users);
+});
 index_1.app.post("/users/login", (req, res) => {
     log.info(`Incoming login credentials are ${req.body}`);
     log.info(`Attempted login with Email: ${req.body.email}`);

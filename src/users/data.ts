@@ -1,29 +1,29 @@
-import { IScore, IUserLogin } from "./model";
+import { IScore, IUserLogin, IUser } from "./model";
 
 export const testData: IScore[] = [
     {
-        date: 4222019,
+        date: 6032019,
         gender: "m",
         score: "3 rounds + 15 reps",
         userId: 1234,
         userName: "Alex Abernathy",
     },
     {
-        date: 4222019,
+        date: 6032019,
         gender: "f",
         score: "3 rounds + 15 reps",
         userId: 1243,
         userName: "Catherine Nettle",
     },
     {
-        date: 4222019,
+        date: 6032019,
         gender: "m",
         score: "3 rounds + 15 reps",
         userId: 1334,
         userName: "Luke Brandon",
     },
     {
-        date: 4222019,
+        date: 6032019,
         gender: "m",
         score: "3 rounds + 15 reps",
         userId: 1442,
@@ -31,63 +31,71 @@ export const testData: IScore[] = [
     },
 
     {
-        date: 4232019,
+        date: 6042019,
         gender: "m",
         score: "2 rounds + 15 reps",
         userId: 1234,
         userName: "Alex Abernathy",
     },
     {
-        date: 4232019,
+        date: 6042019,
         gender: "f",
         score: "2 rounds + 15 reps",
         userId: 1243,
         userName: "Catherine Nettle",
     },
     {
-        date: 4232019,
+        date: 6042019,
         gender: "m",
         score: "2 rounds + 15 reps",
         userId: 1334,
         userName: "Luke Brandon",
     },
     {
-        date: 4232019,
+        date: 6042019,
         gender: "m",
-        score: "2 rounds + 15 reps",
+        score: "2 rounds + 16 reps",
         userId: 1442,
         userName: "Jerry Kelly",
     },
 
     {
-        date: 4242019,
+        date: 6062019,
         gender: "m",
         score: "1 rounds + 15 reps",
         userId: 1234,
         userName: "Alex Abernathy",
     },
     {
-        date: 4242019,
+        date: 6062019,
         gender: "f",
         score: "1 rounds + 15 reps",
         userId: 1243,
         userName: "Catherine Nettle",
     },
     {
-        date: 4242019,
+        date: 6062019,
         gender: "m",
         score: "1 rounds + 15 reps",
         userId: 1334,
         userName: "Luke Brandon",
     },
     {
-        date: 4242019,
+        date: 6052019,
         gender: "m",
         score: "1 rounds + 15 reps",
         userId: 1442,
         userName: "Jerry Kelly",
     },
 
+];
+
+export const users: IUser[] = [
+    { name: "Luke Brandon", signInsThisWeek: 5 },
+    { name: "Alex Abernathy", signInsThisWeek: 2 },
+    { name: "Jerry Kelly", signInsThisWeek: 3 },
+    { name: "Catherine Nettle", signInsThisWeek: 4 },
+    { name: "Bailey Kelly", signInsThisWeek: 1 },
 ];
 
 export const logins: IUserLogin[] = [
